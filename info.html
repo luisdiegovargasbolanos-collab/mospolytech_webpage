@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Московский политех - Информация</title>
+    
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/info.css">
+</head>
+<body class="dark">
+
+    <header class="dark">
+        <div class="header-container">
+            <div class="logo-section">
+                <!-- Логотип: ссылка на главную (main.html) -->
+                <a href="main.html" class="logo-link">
+                    <img src="images/mospolytech.png" alt="Dark Logo" class="logo-img logo-dark">
+                    <img src="images/mospolytechday.jpg" alt="Light Logo" class="logo-img logo-light">
+                </a>
+                
+                <div class="title-section">
+                    <h1 class="lang-ru">Московский политех</h1>
+                    <h1 class="lang-en">Moscow Polytechnic</h1>
+                    <p class="lang-ru">Информация и контакты</p>
+                    <p class="lang-en">Information and Contacts</p>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <!-- Кнопка помощи -->
+                <a href="info.html" class="icon-btn help-btn" title="Помощь">?</a>
+                
+                <div class="theme-toggle-container dark" id="themeToggle">
+                    <div class="theme-toggle-slider" id="themeIcon">🌙</div>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="https://t.me/gdecabinet_bot" target="_blank" class="social-link">
+                        <button class="icon-btn telegram">
+                            <img src="images/telegrama.png" alt="telegram">
+                        </button>
+                    </a>
+                    <a href="https://mail.mospolytech.ru/" target="_blank" class="social-link">
+                        <button class="icon-btn gmail">
+                            <img src="images/email.png" alt="email">
+                        </button>
+                    </a>
+                </div>
+                
+                <div class="flags">
+                    <div class="flag" data-lang="en"><img src="images/usa.png" alt="usa"></div>
+                    <div class="flag active" data-lang="ru"><img src="images/russia.png" alt="russia"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="info-card dark">
+            <div class="info-content">
+                
+                <!-- Контент RU -->
+                <div class="lang-ru">
+                    <h2>Адрес учебного корпуса на ст. м. «ВДНХ»:</h2>
+                    <p style="font-size: 1.2em; margin-bottom: 20px;">
+                        ул. Павла Корчагина, д. 22.
+                    </p>
+                    <span class="highlight-text">Проезд:</span>
+                    <ul class="styled-list">
+                        <li>от станции метро «ВДНХ» (выход №5А) на автобусе 378 до ост. «Школа», далее пешком меньше 5 минут;</li>
+                        <li>от станции метро «ВДНХ» (выход №5А) на автобусе 311 до ост. «Школа им. Твардовского», далее пешком меньше 10 минут;</li>
+                        <li>от станции метро «ВДНХ» (выход №1) на трамваях 11, 25 до ост. «Пл. Академика Люльки», далее пешком 8 минут;</li>
+                        <li>от станции метро «Алексеевская» пройти до остановки на ул. Мытищинская 3-я пешком 6 минут, сесть на автобус 714 до ост. «Школа», далее пешком 3 минуты;</li>
+                        <li>от станции метро «Алексеевская» пройти до остановки на ул. Новоалексеевская, сесть на автобус 14 до ост. «Школа», далее пешком 3 минуты.</li>
+                    </ul>
+                </div>
+
+                <!-- Контент EN -->
+                <div class="lang-en">
+                    <h2>Address of the academic building at VDNKh metro station:</h2>
+                    <p style="font-size: 1.2em; margin-bottom: 20px;">
+                        Pavel Korchagin St., 22.
+                    </p>
+                    <span class="highlight-text">Directions:</span>
+                    <ul class="styled-list">
+                        <li>From "VDNKh" metro station (exit 5A) take bus 378 to "Shkola" stop, then walk less than 5 minutes;</li>
+                        <li>From "VDNKh" metro station (exit 5A) take bus 311 to "Shkola im. Tvardovskogo" stop, then walk less than 10 minutes;</li>
+                        <li>From "VDNKh" metro station (exit 1) take trams 11, 25 to "Pl. Akademika Lyulki" stop, then walk 8 minutes;</li>
+                        <li>From "Alekseevskaya" metro station walk to the stop on Mytishchinskaya 3rd St. (6 min), take bus 714 to "Shkola", then walk 3 minutes;</li>
+                        <li>From "Alekseevskaya" metro station walk to the stop on Novoalekseevskaya St., take bus 14 to "Shkola", then walk 3 minutes.</li>
+                    </ul>
+                </div>
+
+                <!-- Контакты (Footer) -->
+                <div class="footer-boxes">
+                    <div class="box">
+                        <h3 class="lang-ru">Основная контактная информация</h3>
+                        <h3 class="lang-en">Main Contact Information</h3>
+                        <ul class="contact-list">
+                            <li><strong>Tel:</strong> <a href="tel:+74952230523" class="text-link">+7 (495) 223-05-23</a></li>
+                            <li><strong>Fax:</strong> +7 (499) 785-62-24</li>
+                            <li><strong>Email:</strong> <a href="mailto:mospolytech@mospolytech.ru" class="text-link">mospolytech@mospolytech.ru</a></li>
+                            <li class="lang-ru"><strong>Адрес:</strong> г. Москва, ул. Большая Семеновская, д. 38</li>
+                            <li class="lang-en"><strong>Address:</strong> Moscow, Bolshaya Semenovskaya St., 38</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <h3 class="lang-ru">Нашли ошибку? 🐞</h3>
+                        <h3 class="lang-en">Found a bug? 🐞</h3>
+                        <h4 class="lang-ru" style="margin-top:0;">Контакты приёмной комиссии</h4>
+                        <h4 class="lang-en" style="margin-top:0;">Admissions Office Contacts</h4>
+                        <ul class="contact-list">
+                            <li><strong>Tel:</strong> <a href="tel:+74952230523" class="text-link">+7 (495) 223-05-23</a></li>
+                            <li><strong>Tel:</strong> <a href="tel:88005509142" class="text-link">8 (800) 550-91-42</a></li>
+                            <li><strong>Email:</strong> <a href="mailto:priem@mospolytech.ru" class="text-link">priem@mospolytech.ru</a></li>
+                            <li>
+                                <span class="lang-ru"><strong>Сайт:</strong> <a href="https://mospolytech.ru/postupayushchim/" target="_blank" class="text-link">mospolytech.ru/postupayushchim/</a></span>
+                                <span class="lang-en"><strong>Web:</strong> <a href="https://mospolytech.ru/postupayushchim/" target="_blank" class="text-link">mospolytech.ru/postupayushchim/</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Скрипты -->
+    <script src="js/common.js"></script>
+</body>
+</html>
