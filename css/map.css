@@ -1,0 +1,293 @@
+/* =======================================================
+   СТИЛИ КАРТЫ И ПОИСКА (ESTILOS MAPA Y BUSCADOR)
+   ======================================================= */
+
+main {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- ПОИСК (BUSCADOR) --- */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 60%;
+    min-width: 300px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 60px 15px 25px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* --- РЕЗУЛЬТАТЫ (RESULTADOS) --- */
+.result-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    min-height: 40px;
+}
+
+.result-message {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: none;
+}
+
+.result-message.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.telegram-bot-link {
+    display: none;
+    background: #0088cc;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.95em;
+    box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    align-items: center;
+    gap: 10px;
+}
+
+.telegram-bot-link:hover { transform: translateY(-2px); }
+.telegram-bot-link.show { display: inline-flex; animation: fadeIn 0.5s ease; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ГЛАВНАЯ СЕТКА (GRID PRINCIPAL) --- */
+.content-grid {
+    display: grid;
+    /* На ПК делим экран пополам или даем карте фиксированную ширину */
+    /* 1fr (План) и 1fr (Карта) - равномерное распределение */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    align-items: stretch; /* Растягиваем по высоте */
+}
+
+/* --- ПЛАН ЭТАЖА (FLOOR PLAN) --- */
+.floor-plan {
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    position: relative;
+    
+    /* Содержимое в строку (Картинка слева, кнопки справа) */
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    
+    /* Минимальная высота, чтобы соответствовать карте */
+    min-height: 500px;
+}
+
+.floor-plan.dark {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.floor-plan.light {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.floor-plan-container {
+    position: relative;
+    flex: 1;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.floor-plan-image {
+    width: 100%;
+    height: auto;
+    max-height: 450px; 
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+}
+
+/* --- КНОПКИ ЭТАЖЕЙ --- */
+.floor-buttons-wrapper {
+    width: 160px; /* Фиксированная ширина колонки кнопок */
+    flex-shrink: 0;
+    
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(51, 65, 85, 0.3) 100%);
+    border-radius: 20px;
+    padding: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.floor-buttons-wrapper.light {
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%);
+    backdrop-filter: blur(10px);
+}
+
+.floor-buttons {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floor-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 0;
+    border-radius: 12px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.floor-btn.inactive {
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.3) 0%, rgba(51, 65, 85, 0.2) 100%);
+    color: #94a3b8;
+}
+
+.floor-btn.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1e40af 100%);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-left: 8px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* --- КАРТА ЯНДЕКС (YANDEX MAP) --- */
+.map-container {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    /* Фиксированная высота важна, чтобы iframe не схлопнулся */
+    height: 500px; 
+    position: relative;
+    overflow: hidden;
+}
+
+/* Убедимся, что iframe занимает всю высоту контейнера */
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border: none;
+    display: block;
+}
+
+/* =======================================================
+   АДАПТИВНОСТЬ (RESPONSIVE MAPA)
+   ======================================================= */
+
+/* Планшеты (Tablets / Laptops pequeños) < 1200px */
+@media (max-width: 1200px) {
+    .content-grid {
+        grid-template-columns: 1fr; /* Одна колонка: План сверху, Карта снизу */
+        gap: 30px;
+    }
+    
+    .floor-plan {
+        /* На планшете кнопки все еще справа от картинки */
+        flex-direction: row; 
+        min-height: auto; /* Высота авто */
+    }
+    
+    .map-container {
+        height: 400px; /* Карта чуть меньше по высоте */
+    }
+}
+
+/* Мобильные (Móviles) < 768px */
+@media (max-width: 768px) {
+    .search-wrapper {
+        width: 100%;
+    }
+
+    /* План: Картинка сверху, кнопки снизу */
+    .floor-plan {
+        flex-direction: column; 
+        padding: 20px;
+    }
+
+    .floor-plan-image {
+        max-height: 300px;
+    }
+
+    .floor-buttons-wrapper {
+        width: 100%; /* Кнопки на всю ширину */
+        margin-top: 15px;
+    }
+
+    /* Кнопки в две колонки для экономии места */
+    .floor-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+    }
+    
+    .map-container {
+        height: 350px; /* Еще меньше для мобильных */
+    }
+}
